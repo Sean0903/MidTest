@@ -3,15 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/articleFragment">
-
-    <dialog
+    <fragment
         android:id="@+id/articleFragment"
         android:name="com.sean.publisher.article.ArticleFragment"
         android:label="ArticleFragment" >
         <action
             android:id="@+id/action_articleFragment_to_postDialog"
             app:destination="@id/postDialog" />
-    </dialog>
+    </fragment>
     <dialog
         android:id="@+id/postDialog"
         android:name="com.sean.publisher.postDialog.PostDialog"

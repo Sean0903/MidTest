@@ -24,11 +24,11 @@ class PostDialog : DialogFragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        binding.dialogPost.setOnClickListener {
-            if (viewModel.title.value != null && viewModel.category.value != null && viewModel.content.value != null) {
-                viewModel.addArticle()
-            }
-        }
+//        binding.dialogPost.setOnClickListener {
+//            if (viewModel.title.value != null && viewModel.category.value != null && viewModel.content.value != null) {
+//                viewModel.addArticle()
+//            }
+//        }
         return binding.root
     }
 }
