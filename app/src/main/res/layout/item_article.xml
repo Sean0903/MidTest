@@ -49,9 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
             android:background="@android:color/darker_gray"
             android:text="@{item.category}"
+            android:textColor="@android:color/holo_red_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_title"
             tools:text="Beauty" />

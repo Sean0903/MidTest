@@ -4,12 +4,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import java.util.*
 
-
 class PostDialogViewModel : ViewModel() {
 
+    val article: MutableMap<String, Any> = HashMap()
     val title = MutableLiveData<String>()
     val category = MutableLiveData<String>()
     val content = MutableLiveData<String>()
+    val date = Calendar.getInstance().timeInMillis
+
 
 //    val articles = FirebaseFirestore.getInstance()
 //            .collection("articles")

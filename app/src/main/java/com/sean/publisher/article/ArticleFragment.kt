@@ -31,16 +31,16 @@ class ArticleFragment : Fragment(){
         binding.recyclerviewArticle.adapter = adapter
 
         val mock = Article("期中考已經結束啦", "sean", "20210507", "咒術迴戰死好多人",  "烏拉拉")
-        val mock2 = Article("現在弄也太晚", "sean", "綠色", "富奸不讓庫拉皮卡下船",  "哈哈")
+        val mock2 = Article("現在弄也太晚", "sean", "20210507", "富奸不讓庫拉皮卡下船",  "哈哈")
         val mockList = listOf( mock, mock2,mock, mock2)
 
         adapter.submitList(mockList)
 
-        viewModel.article.observe(viewLifecycleOwner, Observer {
-            it?.let{
-                adapter.submitList(it)
-            }
-        })
+//        viewModel.article.observe(viewLifecycleOwner, Observer {
+//            it?.let{
+//                adapter.submitList(it)
+//            }
+//        })
 
         //使用navigation跳轉至dialog
         binding.toDialog.setOnClickListener {
