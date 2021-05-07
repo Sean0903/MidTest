@@ -10,18 +10,18 @@ import com.sean.publisher.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+
     lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
-//
-//        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         navController = Navigation.findNavController(this,R.id.home_fragment)
     }
+
 }
 
 //1.改為FragmentActivity
