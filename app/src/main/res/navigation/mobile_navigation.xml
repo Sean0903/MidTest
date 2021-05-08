@@ -7,12 +7,16 @@
         android:id="@+id/articleFragment"
         android:name="com.sean.publisher.article.ArticleFragment"
         android:label="ArticleFragment" >
-        <action
-            android:id="@+id/action_articleFragment_to_postDialog"
-            app:destination="@id/postDialog" />
     </fragment>
     <dialog
         android:id="@+id/postDialog"
         android:name="com.sean.publisher.postDialog.PostDialog"
-        android:label="PostDialog" />
+        android:label="PostDialog" >
+    </dialog>
+    <action
+        android:id="@+id/action_articleFragment_to_postDialog"
+        app:destination="@id/postDialog" />
+    <action
+        android:id="@+id/action_postDialog_to_articleFragment"
+        app:destination="@id/articleFragment" />
 </navigation>

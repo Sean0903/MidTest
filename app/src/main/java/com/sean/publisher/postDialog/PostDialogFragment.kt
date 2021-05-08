@@ -7,9 +7,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sean.publisher.databinding.DialogBinding
@@ -29,7 +31,7 @@ class PostDialog : DialogFragment() {
             savedInstanceState: Bundle?
     ): View? {
 
-        val binding = DialogBinding.inflate(inflater,container,false)
+        val binding = DialogBinding.inflate(inflater, container, false)
 
         binding.lifecycleOwner = this
 
@@ -53,15 +55,17 @@ class PostDialog : DialogFragment() {
 
         binding.dialogPost.setOnClickListener {
 
-            viewModel.addData()
-
+            if (viewModel.content.value.isNullOrBlank() ||
+                    viewModel.category.value.isNullOrBlank() ||
+                    viewModel.title.value.isNullOrBlank()) {
+                Toast.makeText(context, "請在各欄輸入完整訊息", Toast.LENGTH_LONG).show()
+            } else {
+                viewModel.addData()
             }
+        }
 
         return binding.root
     }
-
-
-
 
 
 //    private fun send() {
