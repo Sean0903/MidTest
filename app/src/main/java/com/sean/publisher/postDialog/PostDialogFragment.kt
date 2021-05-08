@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sean.publisher.databinding.DialogBinding
+import java.util.*
 
 class PostDialog : DialogFragment() {
 
@@ -46,13 +47,13 @@ class PostDialog : DialogFragment() {
 
         binding.dialogContent.doOnTextChanged { text, start, before, count ->
             viewModel.content.value = text.toString()
-            Log.d("test", "viewModel.content.value = ${viewModel.content.value}")
+            Log.d("sean", "viewModel.content.value = ${viewModel.content.value}")
         }
 
 
         binding.dialogPost.setOnClickListener {
 
-            send()
+            viewModel.addData()
 
             }
 
@@ -60,14 +61,17 @@ class PostDialog : DialogFragment() {
     }
 
 
-    private fun send() {
-        //測試
-        val washingtonRef =
-            db.collection("author").document("2021")
-        washingtonRef.update("title", FieldValue.arrayUnion(viewModel.title.value))
-        washingtonRef.update("category", FieldValue.arrayUnion(viewModel.category.value))
-        washingtonRef.update("content", FieldValue.arrayUnion(viewModel.content.value))
-    }
+
+
+
+//    private fun send() {
+//        //測試
+//        val washingtonRef =
+//            db.collection("author").document("2021")
+//        washingtonRef.update("title", FieldValue.arrayUnion(viewModel.title.value))
+//        washingtonRef.update("category", FieldValue.arrayUnion(viewModel.category.value))
+//        washingtonRef.update("content", FieldValue.arrayUnion(viewModel.content.value))
+//    }
 }
 
 
